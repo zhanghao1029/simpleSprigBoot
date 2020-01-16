@@ -1,8 +1,9 @@
 package com.example.control;
-
+import com.example.Dao.DefaultUser;
 import com.example.entity.User;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,12 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+@EnableConfigurationProperties(DefaultUser.class)
 @RestController
 @RequestMapping("/ajax")
 public class ajax {
 
     @Autowired
     private UserService iUser;
+    @Autowired
+    private DefaultUser defaultUser;
 
     @RequestMapping("addUser")
     public List<User>  add (@RequestParam(value = "name") String name,
@@ -52,4 +56,9 @@ public class ajax {
     public void updata(@RequestParam(value = "name") String name){
 
     };
+    @RequestMapping("test")
+    public void Test(){
+        String name = defaultUser.getName();
+        System.out.println(name);
+    }
 }

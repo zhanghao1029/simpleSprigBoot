@@ -51,6 +51,13 @@
             <artifactId>ojdbc14</artifactId>
             <version>10.2.0.4.0</version>
         </dependency>
+        <!--解决配置文件报错-->
+       <!-- classpath；Spring Boot1.5以上版本@ConfigurationProperties取消location注解-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <build>
