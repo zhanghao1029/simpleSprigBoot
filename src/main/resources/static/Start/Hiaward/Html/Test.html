@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../../JS/Jquery/jquery-1.7.js"></script>
+<body>
+<script>
+    window.onload = function(){
+
+    }
+    function compare() {
+        var num = $("#num").val();
+        if(parseFloat(num)>0){
+            alert("success")
+        }else {
+            alert("error")
+        }
+    }
+</script>
+<input type="text" id="num">
+<input type="button" onclick="compare()">
+</body>
+</html>

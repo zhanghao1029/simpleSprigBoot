@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../JS/Jquery/jquery-1.7.js"></script>
+<script>
+    function ajax(){
+        var url = "/ajax/" + $("#Url").val();
+        var name = $("#name").val();
+        var param = {"name":name,
+                     "age":"12"};
+        $.ajax({
+                type : "POST",
+                url : url,
+                data : param ,
+                timeout :"30000",
+                success : function(data ,stuate) {
+                    alert(stuate) ;
+                    alert(data);
+                },
+                error : function(reason,staue) {
+                    alert(staue) ;
+                    alert("fail");
+                }
+            })
+    }
+</script>
+<body>
+    <select id="Url">
+
+        <option value="addUser">加</option>
+
+        <option value="deleteUser">删</option>
+
+        <option value="findUser">查</option>
+
+    </select>
+
+    <input type="text" id = "name" value="">
+
+    <input type="button" value="Send" onclick="ajax()">
+
+</body>
+</html>
