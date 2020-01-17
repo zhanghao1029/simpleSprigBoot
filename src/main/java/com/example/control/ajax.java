@@ -1,6 +1,8 @@
 package com.example.control;
 import com.example.Dao.DefaultUser;
 import com.example.entity.User;
+import com.example.hiaward.util.DefaultHttpClient;
+import com.example.hiaward.util.HttpUrlConnection;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -9,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @EnableConfigurationProperties(DefaultUser.class)
 @RestController
@@ -56,9 +60,24 @@ public class ajax {
     public void updata(@RequestParam(value = "name") String name){
 
     };
-    @RequestMapping("test")
-    public void Test(){
+    @RequestMapping("Test01")
+    public  void TestSetProperties(){
         String name = defaultUser.getName();
         System.out.println(name);
+    }
+//    @RequestMapping("test")
+//    public void Test(){
+//        String Url="http://192.168.14.43:8085/test/testPost2";
+//        String date = "postXML=<?xml version=\"1.0\" encoding=\"UTF-8\"?><root><status>1</status></root>";
+//       String  data =  DefaultHttpClient.httpPost(Url,"zh",false);
+//    }
+
+    @RequestMapping("test")
+    public void Test(){
+        String Url="http://192.168.14.43:8085/test/testPost2";
+        String date = "31231231231231231231232";
+        Map<String, Object> result = new HashMap<>();
+        result= HttpUrlConnection.request(Url, date);
+        System.out.println(result);
     }
 }
