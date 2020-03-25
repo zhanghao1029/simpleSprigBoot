@@ -1,4 +1,4 @@
-package com.example.Dao;
+package com.example.start.Dao;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

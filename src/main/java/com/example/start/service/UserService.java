@@ -1,7 +1,7 @@
-package com.example.service;
+package com.example.start.service;
 
-import com.example.Dao.UserDao;
-import com.example.entity.User;
+import com.example.start.Dao.UserDao;
+import com.example.start.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +21,10 @@ public class UserService {
         List<User> users = userdao.findByName(name);
         return users;
     }
-
+    public List<User> findAP(String  name){
+        List<User> users = userdao.findByName(name);
+        return users;
+    }
     public void deleteUser(List<User> users){
          userdao.deleteAll(users);
     }

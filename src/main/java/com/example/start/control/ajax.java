@@ -1,9 +1,8 @@
-package com.example.control;
-import com.example.Dao.DefaultUser;
-import com.example.entity.User;
-import com.example.hiaward.util.DefaultHttpClient;
+package com.example.start.control;
+import com.example.start.Dao.DefaultUser;
+import com.example.start.entity.User;
 import com.example.hiaward.util.HttpUrlConnection;
-import com.example.service.UserService;
+import com.example.start.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,13 +14,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@EnableConfigurationProperties(DefaultUser.class)
+//@EnableConfigurationProperties(DefaultUser.class)
 @RestController
 @RequestMapping("/ajax")
 public class ajax {
 
     @Autowired
     private UserService iUser;
+
     @Autowired
     private DefaultUser defaultUser;
 
