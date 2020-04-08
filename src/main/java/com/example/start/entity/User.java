@@ -1,15 +1,18 @@
-package com.example.entity;
+package com.example.start.entity;
 import java.io.Serializable;
 
 import javax.persistence.*;
 
-@Entity
+    @Entity
     @Table(name = "t_user")
     public class User implements Serializable{
         private static final long serialVersionUID = -6933265249358475103L;
+
+//        @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="demo_emp_seq")
+//        @SequenceGenerator(name="demo_emp_seq", sequenceName="T_User_ID",allocationSize = 1)
+
         @Id
-        @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="demo_emp_seq")
-        @SequenceGenerator(name="demo_emp_seq", sequenceName="T_User_ID",allocationSize = 1)
+        @GeneratedValue(strategy = GenerationType.AUTO)
         private Integer id;
         private String name;
         private int age;
