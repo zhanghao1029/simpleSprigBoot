@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../JS/Vue/vue.js"></script>
+<body>
+<script>
+    window.onload = function(){
+
+        var showdata = {
+            showmessage : "hello new world!",
+            dayT : "27",
+            dayn : "28",
+            name : "jacLove",
+            nameDefault : "zhanghao",
+            age : "",
+            oldage : "老骥伏枥，志在千里",
+            youngage : "劳动人民",
+            litteage : "祖国的花朵"
+        }
+        var appVue = new Vue({
+            el : '#app',
+            data : showdata
+        })
+
+        var palydate = {
+            name : "",
+            goodTip : ["你爸爸","小胖猪猪","凡人","傻逼"]
+        }
+
+        var playfnc = {
+            say : function(){
+                alert("zj");
+                this.action( this.name )
+            },
+
+            action : function(val){
+                alert(val)
+            }
+        }
+        var playVue = new Vue({
+            el : "#life",
+            data : palydate,
+            methods : playfnc
+        })
+
+    }
+</script>
+<div id = "app">
+    {{showmessage}}
+    <br/>
+请输入你的年龄：
+    <input type="text" v-model = "age" maxlength="10">
+
+    <h1 v-if = "age > 60 ">{{oldage}}</h1>
+    <h1 v-else-if ="age < 10 ">{{litteage}}</h1>
+    <h1 v-else-if ="age =='' ">{{litteage}}</h1>
+    <h1 v-else>{{youngage}}</h1>
+
+<!--    <h1 v-if="dayT > dayn">{{dayT}}</h1>-->
+<!--    <h1 v-else>{{dayn}}</h1>-->
+
+<!--    <h1 v-if="name.indexOf('jack') >= 0">{{name}}</h1>-->
+<!--    <h1 v-else>{{nameDefault}}</h1>-->
+
+
+</div>
+
+<div id = "life">
+    请输入你的姓名：
+    <input type="text" v-model = "name" maxlength="10">
+
+    <h1 v-if = "name =='张浩' ">{{goodTip["0"]}}</h1>
+    <h1 v-else-if = "name =='邓敏'  ">{{goodTip["1"]}}</h1>
+    <h1 v-else-if = "name =='敏' ">{{goodTip["1"]}}</h1>
+    <h1 v-else-if = "name ==''  "></h1>
+    <h1 v-else>{{goodTip["2"]}}</h1>
+
+<!--    <input type="button" v-on:click = "say()" value="testFnc">-->
+
+</div>
+</body>
+</html>
+
+</body>
+</html>

@@ -74,7 +74,7 @@ public class ajax {
 
     @RequestMapping("test")
     public void Test(){
-        String Url="http://192.168.14.43:8085/test/testPost2";
+        String Url="http://192.168.14.43:8085s";
         String date = "31231231231231231231232";
         Map<String, Object> result = new HashMap<>();
         result= HttpUrlConnection.request(Url, date);
